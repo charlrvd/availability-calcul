@@ -98,7 +98,7 @@ def avail(request):
     request_json = request.get_json()
     if request.args and 'downtime' in request.args:
         return calc_avail(request.args.get('downtime'))
-    elif request_json and 'message' in request_json:
+    elif request_json and 'downtime' in request_json:
         return calc_avail(request_json['downtime'])
     else:
         return f'Something did not go as planned!'
