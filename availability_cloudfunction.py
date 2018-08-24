@@ -76,30 +76,39 @@ class Availability:
                     self.period_uptime(self.month),
                     self.period_uptime(self.year))
 
-def calc_avail(message):
-    down_reg = re.compile(r'^(\d+)d(\d+)h(\d+)m$')
-    if not down_reg.match(message):
+def calc_avail(message, period='none'):
+    down_regex = re.compile(r'^(\d+)d(\d+)h(\d+)m$')
+    if not down_regex.match(message):
         return json.dumps({"error": "does not match format XdYhZm"})
-    avail_match = down_reg.search(message)
+    avail_match = down_regex.search(message)
     av = Availability(int(avail_match.group(1)),
                       int(avail_match.group(2)),
                       int(avail_match.group(3)))
+    if period != 'none':
+        return json.dumps(av.service(out_dict=True, period=period))
     return json.dumps(av.service(out_dict=True))
 
 def avail(request):
     """Responds to any HTTP request.
     Args:
-        request (flask.Request): HTTP request object.
+        downtime (format must be XdYhZm where
+                                d is days
+                                h is hours
+                                m is minutes of downtime)
+        Optionnal:
+            period (can be 'daily', 'weekly', 'monthly', 'yearly')
     Returns:
-        The response text or any set of values that can be turned into a
-        Response object using
-        `make_response <http://flask.pocoo.org/docs/0.12/api/#flask.Flask.make_response>`.
+        return a json of the service uptime in %
     """
     request_json = request.get_json()
     if request.args and 'downtime' in request.args:
+        if 'period' in request.args:
+            return calc_avail(request.args.get('downtime'), period=request.args.get('period'))
         return calc_avail(request.args.get('downtime'))
     elif request_json and 'downtime' in request_json:
+        if 'period' in request_json:
+            return calc_avail(request_json['downtime'], period=request_json['period'])
         return calc_avail(request_json['downtime'])
     else:
-        return f'Something did not go as planned!'
+        return json.dumps({"error":help(avail)})
 

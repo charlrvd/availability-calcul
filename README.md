@@ -27,12 +27,21 @@ See all the option
 $ gcloud functions deploy --help
 ```
 
+#### Usage
+
 Use with this format:
 
 ```bash
 curl 'https://gcloud-region-project-id.cloudfunctions.net/function_name?downtime=0d5h54m'
 OR
 curl -X POST -H "Content-Type: application/json" -d '{"downtime":"0d5h54m"}' 'https://gcloud-region-project-id.cloudfunctions.net/function_name'
+```
+Also possible to filter period :
+```bash
+curl 'https://gcloud-region-project-id.cloudfunctions.net/function_name?downtime=0d5h54m&period=monthly'
+curl -X POST -H "Content-Type: application/json" -d '{"downtime":"0d5h54m", "period":"monthly"}' 'https://gcloud-region-project-id.cloudfunctions.net/function_name'
+OR
+
 ```
 
 The above will output
