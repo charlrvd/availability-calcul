@@ -105,3 +105,6 @@ venv.bak/
 
 # Misc
 *.swp
+
+# gcp
+.gcloudignore
