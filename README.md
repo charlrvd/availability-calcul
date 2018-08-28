@@ -54,7 +54,9 @@ Calculations are made on the current month and year.
 
 ### Google AppEngine deployment
 
-TODO
+```bash
+gcloud app deploy app.yaml
+```
 
 ### Docker deployment
 
