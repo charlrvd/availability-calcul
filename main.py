@@ -1,8 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 from availability import Availability
 import json
 
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, template_folder='tpl')
+#app.register_error_handler(404, not_found)
+
+@app.errorhandler(404)
+def no_found(e):
+    return render_template('404.html'), 404
 
 @app.route("/<int:days>/<int:hours>/<int:minutes>")
 def avail(days, hours, minutes):

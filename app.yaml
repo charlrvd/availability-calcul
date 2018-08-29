@@ -1,5 +1,7 @@
 runtime: python37
 
-handlers:
-  - url: /*
-    script: webapp.app
+# Trying to make it work without main.py
+# unsuccessful for now
+#handlers:
+#  - url: /.*
+#    script: webapp.app

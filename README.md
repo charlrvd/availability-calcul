@@ -58,6 +58,18 @@ Calculations are made on the current month and year.
 gcloud app deploy app.yaml
 ```
 
+#### AppEngine howto
+
+File necessary for AppEngine:
+- app.yaml
+- main.py
+- availability.py
+- tpl/*
+
+app.yaml directs to the backend logic files.
+Here main.py is necessary to use that name for AppEngine.
+See more [Official Doc](https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env)
+
 ### Docker deployment
 
 TODO

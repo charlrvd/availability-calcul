@@ -1,13 +1,13 @@
 #cloudfunction
-add help
-add sliding when operationnal
+[] add help
+[] add sliding when operationnal
 
 #appengine
-add flask
-write app.ym
+[x] add flask
+[x] write app.ym
 
 #docker
-write dockerfile
+[] write dockerfile
 
 #test
-write unnittests
+[] write unnittests
