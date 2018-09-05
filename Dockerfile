@@ -1,7 +1,7 @@
 FROM python:3
 
 LABEL version="1.0"
-LABEL maintainer="charles.reverdy@gmail.com"
+LABEL maintainer="charlrvd"
 LABEL description="Small app to calculate availability based on downtime input"
 
 ADD . /
