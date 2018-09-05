@@ -1,0 +1,13 @@
+app.yaml
+availability_cloudfunction.py
+calc_uptime.py
+env/
+.git/
+.gcloudignore
+.gitignore
+LICENSE
+pip-selfcheck.json
+__pycache__/
+README.md
+tests.py
+TODO

@@ -38,13 +38,14 @@ class Availability:
 
     def service(self, period='none', out_dict=False):
         """
-        optionnal argument {period}
+        - optionnal argument {period}
         can take 4 different possibility:
         daily / weekly / monthly / yearly
         if none,
         return a tuple of all the sla
         order is: (daily, weekly, monthly, yearly)
-        optionnal argument {out_dict}
+
+        - optionnal argument {out_dict}
         if set to True, will return value in a dict
         """
         if period == 'daily':

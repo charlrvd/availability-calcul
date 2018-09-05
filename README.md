@@ -67,16 +67,27 @@ File necessary for AppEngine:
 - tpl/*
 
 app.yaml directs to the backend logic files.
+
 Here main.py is necessary to use that name for AppEngine.
+
 See more [Official Doc](https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env)
 
 ### Docker deployment
 
-TODO
+Build the container from the [Dockerfile](Dockerfile)
+
+```bash
+docker build -t availapp:latest .
+```
+
+Run it
+```bash
+docker run -d --name container_avail_1 -p 80:8000 availapp
+```
 
 ## Unit tests
 
-TODO
+Units are in the [tests.py](tests.py) file
 
 
 ## License
