@@ -7,7 +7,7 @@ Will calculate availability for the day/week/month/year given an input of downti
 
 ### Google Cloud Function installation
 
-The file [availability_cloudfunction.py](availability_cloudfunction.py) is ready to deploy to a cloud function
+The file [availability_cloudfunction.py](cloudfunction/availability_cloudfunction.py) is ready to deploy to a cloud function
 The current version is used as http trigger function and will return json
 
 Deploy by copying the file into GCP console in a new cloud function.
@@ -64,17 +64,17 @@ File necessary for AppEngine:
 - app.yaml
 - main.py
 - availability.py
-- tpl/*
+- templates/*
 
 app.yaml directs to the backend logic files.
 
-Here main.py is necessary to use that name for AppEngine.
+Here [`main.py`](appengine/main.py) is necessary to use that name for AppEngine.
 
 See more [Official Doc](https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env)
 
 ### Docker deployment
 
-Build the container from the [Dockerfile](Dockerfile)
+Build the container from the [Dockerfile](docker/Dockerfile)
 
 ```bash
 docker build -t availapp:latest .

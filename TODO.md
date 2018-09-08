@@ -7,7 +7,7 @@
 [x] write app.ym
 
 #docker
-[] write dockerfile
+[x] write dockerfile
 
 #test
-[] write unnittests
+[-] write unnittests
