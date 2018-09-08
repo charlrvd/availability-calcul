@@ -2,8 +2,8 @@ from flask import Flask, render_template
 from availability import Availability
 import json
 
-#app = Flask(__name__)
-app = Flask(__name__, template_folder='tpl')
+app = Flask(__name__)
+#app = Flask(__name__, template_folder='tpl')
 #app.register_error_handler(404, not_found)
 
 @app.errorhandler(404)
