@@ -103,11 +103,13 @@ def avail(request):
     request_json = request.get_json()
     if request.args and 'downtime' in request.args:
         if 'period' in request.args:
-            return calc_avail(request.args.get('downtime'), period=request.args.get('period'))
+            return calc_avail(request.args.get('downtime'),
+                              period=request.args.get('period'))
         return calc_avail(request.args.get('downtime'))
     elif request_json and 'downtime' in request_json:
         if 'period' in request_json:
-            return calc_avail(request_json['downtime'], period=request_json['period'])
+            return calc_avail(request_json['downtime'],
+                              period=request_json['period'])
         return calc_avail(request_json['downtime'])
     else:
         return json.dumps({"error":help(avail)})
