@@ -56,18 +56,6 @@ class Availability:
             if out_dict:
                 return {period: self.period_uptime(self.periods[period])}
             return self.period_uptime(self.periods[period])
-        #elif period == 'weekly':
-        #    if out_dict:
-        #        return {'weekly': self.period_uptime(self.week)}
-        #    return self.period_uptime(self.week)
-        #elif period == 'monthly':
-        #    if out_dict:
-        #        return {'monthly': self.period_uptime(self.month)}
-        #    return self.period_uptime(self.month)
-        #elif period == 'yearly':
-        #    if out_dict:
-        #        return {'yearly': self.period_uptime(self.year)}
-        #    return self.period_uptime(self.year)
         else:
             if out_dict:
                 return {'daily': self.period_uptime(self.day),
